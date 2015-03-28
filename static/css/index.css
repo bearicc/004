@@ -14,9 +14,16 @@ nav.navbar.navbar-fixed-top {
     border: 0;
 }
 
+nav.navbar.navbar-fixed-top li.active a, a:hover {
+    background-color: transparent;
+    color: #FCA205;
+}
+
 nav.navbar.navbar-fixed-top a {
     font-size: 20px;
     color: lightgreen;
+    text-shadow: 2px 2px black;
+    background-color: transparent;
 }
 
 nav.navbar.navbar-fixed-top a:hover {
@@ -27,10 +34,69 @@ nav.navbar.navbar-fixed-top a:hover {
 .main-gallery {
     height: 100%;
     background-size: cover;
+    background: black;
 
 }
 .main-gallery .gallery-cell {
     height: 100%;
+    width: 70%;
+      /* flex-box, center image in cell */
+      display: -webkit-box;
+      display: -webkit-flex;
+      display:         flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+              justify-content: center;
+      -webkit-align-items: center;
+              align-items: center;
+}
+
+.main-gallery .gallery-cell img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    /* dim unselected */
+    opacity: 0.7;
+    -webkit-transform: scale(0.85);
+          transform: scale(0.85);
+    -webkit-filter: blur(5px);
+          filter: blur(5px);
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s, transform 0.3s, -webkit-filter 0.3s, filter 0.3s;
+          transition: opacity 0.3s, transform 0.3s, filter 0.3s;
+}
+
+.gallery-cell.is-selected img {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-filter: none;
+          filter: none;
+}
+
+/* buttons, no circle */
+.flickity-prev-next-button {
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    opacity: 0.6;
+}
+.flickity-prev-next-button:hover {
+    background: transparent;
+    opacity: 1;
+}
+/* arrow color */
+.flickity-prev-next-button .arrow {
+    fill: white;
+}
+.flickity-prev-next-button.no-svg {
+    color: white;
+}
+/* closer to edge */
+.flickity-prev-next-button.previous { left: 0; }
+.flickity-prev-next-button.next { right: 0; }
+/* hide disabled button */
+.flickity-prev-next-button:disabled {
+    display: none;
 }
 
 #blog h1 {
