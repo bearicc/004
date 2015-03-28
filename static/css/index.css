@@ -129,7 +129,7 @@ nav.navbar.navbar-fixed-top a:hover {
 }
 .main-gallery .gallery-cell.gallery-cell-2 .posts {
     position: absolute;
-    top: 40%;
+    top: 45%;
     left: 10%;
     transform: translate(0, -50%);
 }
