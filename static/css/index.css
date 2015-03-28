@@ -8,6 +8,11 @@
     margin-bottom: 10px;
     box-shadow: 1px 1px grey;
 }
+
+.post p {
+    font-size: 16px;
+}
+
 h2 a {
     color: #FCA205;
 }
