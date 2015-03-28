@@ -11,17 +11,10 @@ html, body, #siderbar {
     margin-top: 0;
 }
 
-.post {
-    border: 1px solid black;
-    padding: 0 10px;
-    margin-bottom: 20px;
-    box-shadow: 1px 1px grey;
-}
-
-.post p {
-    font-size: 16px;
-}
-
 h2 a {
     color: #FCA205;
+}
+
+#blog article .lead {
+    font-size: 16px;
 }
