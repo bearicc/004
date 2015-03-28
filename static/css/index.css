@@ -1,0 +1,13 @@
+.navbar {
+    border-radius: 0;
+}
+
+.post {
+    border: 1px solid black;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px grey;
+}
+h2 a {
+    color: #FCA205;
+}
