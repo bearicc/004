@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700|Indie+Flower|Pacifico);
 html, body {
     height: 100%;
     min-height: 100%;
@@ -10,8 +11,8 @@ html, body {
 
 nav.navbar.navbar-fixed-top {
     padding: 10px 30px;
-    background-color: transparent;
-    border: 0;
+    background-color: #8c8;
+    border-bottom: 1px solid grey;
 }
 
 nav.navbar.navbar-fixed-top li.active a, a:hover {
@@ -21,8 +22,8 @@ nav.navbar.navbar-fixed-top li.active a, a:hover {
 
 nav.navbar.navbar-fixed-top a {
     font-size: 20px;
-    color: lightgreen;
-    text-shadow: 2px 2px black;
+    color: white;
+    text-shadow: 1px 1px black;
     background-color: transparent;
 }
 
@@ -37,9 +38,10 @@ nav.navbar.navbar-fixed-top a:hover {
     background: black;
 
 }
+
 .main-gallery .gallery-cell {
     height: 100%;
-    width: 70%;
+    width: 100%;
       /* flex-box, center image in cell */
       display: -webkit-box;
       display: -webkit-flex;
@@ -52,25 +54,8 @@ nav.navbar.navbar-fixed-top a:hover {
 }
 
 .main-gallery .gallery-cell img {
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    /* dim unselected */
-    opacity: 0.7;
-    -webkit-transform: scale(0.85);
-          transform: scale(0.85);
-    -webkit-filter: blur(5px);
-          filter: blur(5px);
-    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s, transform 0.3s, -webkit-filter 0.3s, filter 0.3s;
-          transition: opacity 0.3s, transform 0.3s, filter 0.3s;
-}
-
-.gallery-cell.is-selected img {
-  opacity: 1;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-filter: none;
-          filter: none;
+    width: 100%;
+    height: auto;
 }
 
 /* buttons, no circle */
@@ -99,6 +84,62 @@ nav.navbar.navbar-fixed-top a:hover {
     display: none;
 }
 
+.main-gallery .gallery-cell.gallery-cell-1 {
+    background-color: #ED2;
+}
+
+.main-gallery .gallery-cell.gallery-cell-1 h1 {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    transform: translate(0, -50%);
+    font-size: 60px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+.main-gallery .gallery-cell.gallery-cell-1 p {
+    font-family: 'Indie Flower', cursive;
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    transform: translate(0, -50%);
+    font-weight: bold;
+    font-size: 60px;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+
+.main-gallery .gallery-cell.gallery-cell-2 {
+    font-family: 'Montserrat', sans-serif;
+    background-color: lightblue;
+}
+
+.main-gallery .gallery-cell.gallery-cell-2 h1 {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    transform: translate(0, -50%);
+    font-size: 60px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+.main-gallery .gallery-cell.gallery-cell-2 .posts {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    transform: translate(0, -50%);
+}
+
+.main-gallery .gallery-cell.gallery-cell-2 .posts p {
+    color: black;
+    font-weight: bold;
+    font-size: 24px;
+}
+
 #blog h1 {
     margin-top: 0;
 }
@@ -109,4 +150,9 @@ h2 a {
 
 #blog article p {
     font-size: 20px;
+}
+
+.bear {
+    font-family: 'Pacifico', cursive;
+    text-shadow: 2px 2px blue;
 }

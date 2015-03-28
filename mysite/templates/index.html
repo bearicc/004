@@ -34,11 +34,33 @@
     </nav>
 <!-- ============================== navbar ============================== -->
     <div class="main-gallery">
-        <div class="gallery-cell"><img src="{% static 'img/001.png' %}"></img></div>
-        <div class="gallery-cell"><img src="{% static 'img/002.png' %}"></img></div>
-        <div class="gallery-cell"><img src="{% static 'img/003.png' %}"></img></div>
-        <div class="gallery-cell"><img src="{% static 'img/004.png' %}"></img></div>
-        <div class="gallery-cell"><img src="{% static 'img/005.png' %}"></img></div>
+        <div class="gallery-cell gallery-cell-1">
+            <h1>Welcome to <span class="bear"> Bear </span>'s homepage!</h1>
+            <p>Nice to meet you!</p>
+        </div>
+        <div class="gallery-cell gallery-cell-2">
+            <h1>Lates Posts:</h1>
+            <div class="posts">
+            {% for post in posts %}
+            <p class="lead">{{ post.title }}</p>
+            {% endfor %}
+            </div>
+        </div>
+        <div class="gallery-cell">
+            <img src="{% static 'img/001.png' %}">
+        </div>
+        <div class="gallery-cell">
+            <img src="{% static 'img/002.png' %}">
+        </div>
+        <div class="gallery-cell">
+            <img src="{% static 'img/003.png' %}">
+        </div>
+        <div class="gallery-cell">
+            <img src="{% static 'img/004.png' %}">
+        </div>
+        <div class="gallery-cell">
+            <img src="{% static 'img/005.png' %}">
+        </div>
     </div>
 <!-- ============================== navbar ============================== -->
     <!-- JavaScript -->
