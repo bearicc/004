@@ -35,15 +35,34 @@
         <div class="row">
             <div class="col-md-9" id="blog">
                 <h1>BEAR's blog</h1>
+<!-- ============================== blog ============================== --> 
                 {% for post in posts %}
-                <div class="post">
-                    <h2><a href="">{{ post.title }}</a></h2>
-                    <p style="color:blue">Published: {{ post.published_date }}</p>
-                    <p>{{ post.text|linebreaks }}</p>
-                </div>
+                <article>
+                    <h2><a href="#">{{ post.title }}</a></h2>
+                    <div class="row">
+                        <div class="group1 col-sm-6 col-md-6">
+                            <span class="glyphicon glyphicon-folder-open"></span>  <a href="#">C++</a>
+                            <span class="glyphicon glyphicon-bookmark"></span> <a href="#">Python</a>, <a href="#">C++</a>, <a href="#">Python</a>
+                        </div>
+                        <div class="group2 col-sm-6 col-md-6">
+                            <span class="glyphicon glyphicon-pencil"></span> <a href="singlepost.html#comments">20 Comments</a>                             
+                            <span class="glyphicon glyphicon-time"></span> Published: {{ post.published_date }}
+                        </div>
+                    </div>
+                    <hr>
+                    <br />
+                    <p class="lead">{{ post.text|linebreaks }}</p>
+                    <p class="text-right">
+                        <a href="singlepost.html" class="text-right">
+                            continue reading...
+                        </a>
+                    </p>
+                 
+                    <hr>
+                </article>
                 {% endfor %}
-            </div>
 <!-- ============================== siderbar ============================== --> 
+            </div>
             <div class="col-md-3" id="sidebar">
                 <div class="panel panel-default"> 
                     <div class="panel-heading"> 
