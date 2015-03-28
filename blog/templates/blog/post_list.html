@@ -3,6 +3,13 @@
         <title>BEARICC</title>
     </head>
     <body>
-        <h1>Hello, world!</h1>
+        <h1>BEAR's blog</h1>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaks }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
