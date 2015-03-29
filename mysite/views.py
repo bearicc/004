@@ -5,8 +5,14 @@ from django import forms
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 
-class NameForm(forms.Form):
-    your_name = forms.CharField(label='Your name', max_length=100)
+class SignupForm(forms.Form):
+    name   = forms.CharField(label='Name', max_length=32)
+    passwd1 = forms.CharField(label='Password', max_length=32, widget=forms.PasswordInput)
+    passwd2 = forms.CharField(label='Confirm', max_length=32, widget=forms.PasswordInput)
+    def clean(self, *args, **kwargs):
+        if self.data['passwd1'] and  self.data['passwd1'] != self.data['passwd2']:
+            raise forms.ValidationError('Passwords are not the same')
+        return super(SignupForm, self).clean(*args, **kwargs)
 
 # Create your views here.
 def home(request):
@@ -17,23 +23,21 @@ def login(request):
     current_name = ' '
     return render(request, 'login.html')#, {'current_name', current_name})
 
-def get_name(request):
+def signup(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = NameForm(request.POST)
-        # check whether it's valid:
+        form = SignupForm(request.POST)
         if form.is_valid():
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
-            return HttpResponseRedirect('/thanks/'+form.cleaned_data['your_name']+'/')
+            return HttpResponseRedirect('/thanks/'+form.cleaned_data['name']+'/')
 
     # if a GET (or any other method) we'll create a blank form
     else:
-        form = NameForm()
+        form = SignupForm()
 
-    return render(request, 'name.html', {'form': form})
+    return render(request, 'signup.html', {'form': form})
 
 def thanks(request, name):
-    return HttpResponse('How are you, '+name+'!')
+    return HttpResponse('Thanks for registration, '+name+'!')
