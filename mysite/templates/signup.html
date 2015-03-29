@@ -3,10 +3,35 @@
 {% block title %}Sign up{% endblock %}
 {% block body %}
 
-<form action="/signup/" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit" />
-</form>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            {{ form.non_field_errors }}
+            <form action="/signup/" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" name="name" placeholder="Your Name" value="{{ form.name.value|default_if_none:"" }}">
+                  </div>
+                  <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="passwd1" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <label>Confirm</label>
+                    <input type="password" class="form-control" name="passwd2" placeholder="Type Your Password Again">
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> Remember the password
+                    </label>
+                  </div>
+                  <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
 
 {% endblock %}

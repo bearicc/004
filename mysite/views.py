@@ -31,6 +31,9 @@ def signup(request):
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
+            print(form.cleaned_data['name'])
+            print(form.cleaned_data['passwd1'])
+            print(form.cleaned_data['passwd2'])
             return HttpResponseRedirect('/thanks/'+form.cleaned_data['name']+'/')
 
     # if a GET (or any other method) we'll create a blank form
@@ -40,4 +43,4 @@ def signup(request):
     return render(request, 'signup.html', {'form': form})
 
 def thanks(request, name):
-    return HttpResponse('Thanks for registration, '+name+'!')
+    return HttpResponse('<h1 style="text-align: center">Thanks for registration, <span style="color: blue">'+name+'</span>!</h1>')
