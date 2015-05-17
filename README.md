@@ -1,5 +1,5 @@
 # bearicc
-A personal website.
+A personal website (in progress ...).
 
 ## Web Server: Django
 
