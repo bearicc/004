@@ -218,7 +218,7 @@ function GenArrayFromIndex(array, m, n, c1, c2, buffer, index) {
 
 function drawScene() {
     gl.canvas.width = window.innerWidth;
-    gl.canvas.height = window.innerHeight;
+    gl.canvas.height = 0.8*window.innerHeight;
 
     gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
@@ -257,7 +257,7 @@ function webGLStart() {
     mat4.rotate(cube.mvMatrix, cube.mvMatrix, 210/180*Math.PI, [1.0, 0.0, 0.0]);
     g_models.push(cube);
 
-    gl.clearColor(0.0, 0.0, 0.0, 1.0);
+    gl.clearColor(0.6, 0.6, 0.6, 1.0);
     gl.enable(gl.DEPTH_TEST);
 
     tick();
