@@ -1,0 +1,73 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.min.css">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>BEAR's website</title>
+</head>
+<body>
+<!-- ============================== navbar ============================== -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Welcome</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="blog">Blog<span class="sr-only">(current)</span></a></li>
+            <li><a href="/signup">Sign up</a></li>
+            <li><a href="/blog/admin">Login in</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+<!-- ============================== navbar ============================== -->
+    <div class="main-gallery">
+        <div class="gallery-cell gallery-cell-1">
+            <h1>Welcome to <span class="bear"> Bear </span>'s homepage!</h1>
+            <p>Nice to meet you!</p>
+        </div>
+        <div class="gallery-cell gallery-cell-2">
+            <h1>Latest Posts:</h1>
+            <div class="posts">
+            {% for post in posts %}
+            <p class="lead">{{ post.title }}</p>
+            {% endfor %}
+            </div>
+        </div>
+        <div class="gallery-cell">
+            <img src="{% static 'img/001.png' %}">
+        </div>
+        <div class="gallery-cell">
+            <img src="{% static 'img/002.png' %}">
+        </div>
+        <div class="gallery-cell">
+            <img src="{% static 'img/003.png' %}">
+        </div>
+        <div class="gallery-cell">
+            <img src="{% static 'img/004.png' %}">
+        </div>
+        <div class="gallery-cell">
+            <img src="{% static 'img/005.png' %}">
+        </div>
+    </div>
+<!-- ============================== navbar ============================== -->
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.min.js"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>
