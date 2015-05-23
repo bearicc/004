@@ -1,4 +1,4 @@
-#!/home/bear/Documents/heroku/bearicc/venv/bin/python3.4
+#!/home/bear/Documents/code/bearicc/venv/bin/python3
 
 # -*- coding: utf-8 -*-
 import re
